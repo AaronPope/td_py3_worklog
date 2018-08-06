@@ -1,2 +1,2 @@
-while(text = input(">>> ") != "quit"):
-    print (text)
+while(True):
+    pass
