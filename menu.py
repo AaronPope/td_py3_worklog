@@ -8,13 +8,13 @@ class Menu:
         if clear:
             clear_screen()
         for key, value in self.options.items():
-            print(f"{key}) {value}")
+            print(f"[{key}] {value}")
     
     def prompt_with_options(self, clear = False):
         self.print_options(clear)
         return input(">>> ").upper()
 
-    def get_menu_selection(self, direction_text = "Make a selection...", clear = False):
+    def get_menu_selection(self, direction_text = "Make a selection...", clear=True):
         """Returns a valid selection from options.keys()"""
         if clear:
             clear_screen()
