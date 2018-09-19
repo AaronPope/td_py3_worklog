@@ -16,10 +16,12 @@ if __name__ == '__main__':
         reader = csv.DictReader(file)
         all_tasks = list(reader)
 
-        print(all_tasks[0])
+    while True:
+        menus.main_menu.get_menu_selection("What would you like to do?\n")
+        menus.lookup_menu.get_menu_selection("Lookup by...\n")
 
-    menus.main_menu.get_menu_selection("What would you like to do?", True)
-    menus.lookup_menu.get_menu_selection("Lookup by...", True)
+    for task in all_tasks:
+        print(task)
 
 
 # N) New Entry
