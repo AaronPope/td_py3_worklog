@@ -3,7 +3,7 @@ from menu import Menu
 main_menu = Menu({
         "N": "Add New Entry",
         "L": "Lookup Previous Entries",
-        "Q": "Quit"
+        "Q": "[QUIT]"
 })
     
 lookup_menu = Menu({
@@ -11,7 +11,7 @@ lookup_menu = Menu({
         "T": "Time Spent",
         "S": "Exact Search",
         "P": "Pattern Search",
-        "B": "Back"
+        "B": "BACK [main menu]"
 })
 
 print(main_menu)
