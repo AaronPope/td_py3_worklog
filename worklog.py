@@ -18,8 +18,8 @@ if __name__ == '__main__':
 
         print(all_tasks[0])
 
-    # menus.main_menu.get_menu_selection("What would you like to do?", True)
-    # menus.lookup_menu.get_menu_selection("Lookup by...", True)
+    menus.main_menu.get_menu_selection("What would you like to do?", True)
+    menus.lookup_menu.get_menu_selection("Lookup by...", True)
 
 
 # N) New Entry

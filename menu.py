@@ -12,7 +12,7 @@ class Menu:
     
     def prompt_with_options(self, clear = False):
         self.print_options(clear)
-        return input(">>> ")
+        return input(">>> ").upper()
 
     def get_menu_selection(self, direction_text = "Make a selection...", clear = False):
         """Returns a valid selection from options.keys()"""
