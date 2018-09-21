@@ -15,7 +15,8 @@ from menus import main_menu
 def add_new_entry():
     task_name = input("Enter task name\n>>> ")
     task_minutes = input("\nEnter number of minutes\n>>> ")
-    task_date = input("\nEnter date (MM/DD/YYYY) or press ENTER for [TODO: Insert today's date]\n>>> ")
+    # TODO: Shorten this line
+    task_date = input(f"\nEnter date in YYYY-MM-DD format\n(or press ENTER for {datetime.date.today()})\n>>> ") or datetime.date.today()
     task_note = input("\nEnter a note for this entry (optional)\n>>> ")
     # TODO: Remove this
     input(f"{task_name}, {task_minutes}, {task_date}, {task_note}")
