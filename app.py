@@ -8,8 +8,10 @@ import json
 import sys
 
 import utils
+
 from menus import lookup_menu
 from menus import main_menu
+from worklog import Worklog
 
 
 
@@ -51,15 +53,8 @@ def lookup_entries():
 if __name__ == '__main__':
     utils.clear_screen()
 
-    with open("entries.csv") as file:
-        reader = csv.DictReader(file)
-        all_tasks = list(reader)
-
-    # with open("entries.json") as file:
-    #     all_tasks = json.load(file)["entries"]
-
-    for task in all_tasks:
-        print(task)
+    worklog = Worklog()
+    worklog.print_entries()
     input("WAIT...")
 
     while True:
@@ -70,9 +65,6 @@ if __name__ == '__main__':
             add_new_entry()
         else:
             lookup_entries()
-
-    for task in all_tasks:
-        print(task)
 
 
 # N) New Entry
