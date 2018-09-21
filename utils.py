@@ -14,5 +14,3 @@ def exit_check(choice):
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
-def print_invalid_entry_message():
-    print("Invalid entry.  Please select again.\n")
