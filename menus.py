@@ -13,5 +13,3 @@ lookup_menu = Menu({
         "P": "Pattern Search",
         "B": "<--MAIN MENU---"
 })
-
-print(main_menu)
