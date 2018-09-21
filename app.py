@@ -15,16 +15,6 @@ from worklog import Worklog
 
 
 
-def add_new_entry():
-    task_name = input("Enter task name\n>>> ")
-    task_minutes = input("\nEnter number of minutes\n>>> ")
-    # TODO: Shorten this line
-    task_date = input(f"\nEnter date in YYYY-MM-DD format\n(or press ENTER for {datetime.date.today()})\n>>> ") or datetime.date.today()
-    task_note = input("\nEnter a note for this entry (optional)\n>>> ")
-    # TODO: Remove this
-    input(f"{task_name}, {task_minutes}, {task_date}, {task_note}")
-    pass
-
 def lookup_entries():
     selection = lookup_menu.get_menu_selection("Lookup by...\n")
     if selection == "B":
@@ -62,7 +52,7 @@ if __name__ == '__main__':
         utils.exit_check(selection)
 
         if selection == "A":
-            add_new_entry()
+            worklog.add_new_entry()
         else:
             lookup_entries()
 

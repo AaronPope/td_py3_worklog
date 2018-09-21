@@ -1,6 +1,6 @@
 import datetime
 
-class Task:
+class Entry:
     def __init__(self, name, date, time_spent, note):
         self.name = str(name)
         try:
