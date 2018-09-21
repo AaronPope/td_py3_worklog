@@ -4,6 +4,7 @@
 
 import csv
 import datetime
+import json
 import sys
 
 import utils
@@ -53,6 +54,13 @@ if __name__ == '__main__':
     with open("entries.csv") as file:
         reader = csv.DictReader(file)
         all_tasks = list(reader)
+
+    # with open("entries.json") as file:
+    #     all_tasks = json.load(file)["entries"]
+
+    for task in all_tasks:
+        print(task)
+    input("WAIT...")
 
     while True:
         selection = main_menu.get_menu_selection("What would you like to do?\n") 
