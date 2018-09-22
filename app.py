@@ -14,7 +14,6 @@ if __name__ == '__main__':
     utils.clear_screen()
 
     worklog = Worklog()
-    input(worklog.print_entries())
 
     while True:
         selection = main_menu.get_menu_selection("What would you like to do?\n") 
