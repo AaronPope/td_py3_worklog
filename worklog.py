@@ -34,7 +34,7 @@ class Worklog:
     def print_entries(self):
         try:
             for entry in self.entries:
-                print(entry)
+                print(f'{entry}\n')
         except AttributeError:
             print("No entries exist for this worklog...")
 
