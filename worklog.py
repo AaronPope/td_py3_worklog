@@ -30,7 +30,8 @@ class Worklog:
         task_name = input("Enter task name\n>>> ")
         task_minutes = input("\nEnter number of minutes\n>>> ")
         # TODO: Shorten this line
-        task_date = input(f"\nEnter date in YYYY-MM-DD format\n(or press ENTER for {datetime.date.today()})\n>>> ") or datetime.date.today()
+        task_date = input(f"\nEnter date in YYYY-MM-DD format\n"
+                    + "(or press ENTER for {datetime.date.today()})\n>>> ") or datetime.date.today()
         task_note = input("\nEnter a note for this entry (optional)\n>>> ")
         with open(self.file_name, "a") as file:
             file.write(f"{task_date},{task_name},{task_minutes},{task_note}\n")
