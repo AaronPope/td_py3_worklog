@@ -1,9 +1,11 @@
 from menu import Menu
 
 main_menu = Menu({
-        "A": "Add New Entry",
-        "L": "Lookup Previous Entries",
-        "C": "Clear Worklog",
+        "A": "ADD New Entry",
+        "E": "EDIT Existing Entry",
+        "D": "DELETE Single Entry",
+        "C": "CLEAR Entire Worklog",
+        "L": "LOOKUP Previous Entries",
         "Q": "---QUIT---"
 })
     
