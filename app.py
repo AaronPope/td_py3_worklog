@@ -53,6 +53,8 @@ if __name__ == '__main__':
 
         if selection == "A":
             worklog.add_new_entry()
+        elif selection == "C":
+            worklog.clear_entries()
         else:
             lookup_entries()
 
