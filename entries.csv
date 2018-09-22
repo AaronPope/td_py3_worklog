@@ -1,3 +1,4 @@
-Date,Task Name,Time Spent,Note
-3/3/2013,SampleTask1,30,SampleNote1
-4/4/2014,SampleTask2,110,SampleNote2
+date,name,minutes,note
+2018-09-21,Task 1,11,Note 1
+BAD DATE,Task 2,22,Did that really happen?  I can't remember this day.
+3333-33-33,Task 3,33,So far into the future!  Nice planning!
