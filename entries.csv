@@ -1,5 +1,16 @@
 date,name,minutes,note
 2018-09-21,Task 1,11,Note 1
-BAD DATE,Task 2,22,Did that really happen?  I can't remember this day.
-3333-33-33,Task 3,33,So far into the future!  Nice planning!
-C,A,B,D
+2001-12-31,Task 2,22,Did that really happen?  I can't remember this day.
+3333-03-33,Task 3,33,So far into the future!  Nice planning!
+1111-10-01,Very early thing,9901,Possibly the first ever recorded worklog item
+1111-12-12,Keepin' on with the coding,400,It's been a long productive night
+1111-11-11,lines test,1,
+2018-09-21,"comma test, again",5,"it's taken a long, long time!"
+
+2018-09-21,once more,5,"testing 1, 2, 3"
+
+2018-09-21,,54,
+2018-09-21,,4,
+2018-09-21,1,1,1
+2018-09-21,"1,1,1,",2,"1,1,1,1"
+2018-09-21,,432,"what a long time, eh?"

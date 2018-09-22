@@ -1,17 +1,46 @@
 import datetime
+import re
+
+from utils import validate_date_format
+from utils import validate_positive_int
 
 class Entry:
-    def __init__(self, name, date, time_spent, note):
+    def __init__(self, date, name, minutes, note):
+        validate_date_format(date)
+        validate_positive_int(minutes)
+        
+        self.date = date
         self.name = str(name)
-        try:
-            # TODO: Check to see if date is passed in correct format
-            pass
-        except Exception:
-            pass
-        try:
-            # TODO: Check to see that time_spent is in minutes
-            pass
-        except Exception:
-            pass
-        self.time_spent = time_spent
+        self.minutes = minutes
         self.note = str(note)
+
+    def __str__(self):
+        return f'{self.date},{self.name},{self.minutes},{self.note}'
+
+    @classmethod
+    def create(cls):
+        date = str(input(f"Enter date in YYYY-MM-DD format\n"
+                    + "(or press ENTER for {datetime.date.today()})\n>>> ")
+                    or datetime.date.today())
+        while True:
+            try:
+                validate_date_format(date)
+            except ValueError:
+                date = str(input("Couldn't parse entry.  Please try again.\n>>> ")
+                    or datetime.date.today())
+            else:
+                break
+        
+        name = input("\nEnter task name\n>>> ")
+        
+        minutes = input("\nEnter number of minutes\n>>> ")
+        while True:
+            try:
+                validate_positive_int(minutes)
+            except ValueError as error:
+                print(error)
+                minutes = input(">>> ")
+            else:
+                break
+        note = input("\nEnter a note for this entry (optional)\n>>> ")
+        return cls(date, name, minutes, note)

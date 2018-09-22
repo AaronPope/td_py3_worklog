@@ -3,6 +3,7 @@ import datetime
 import os
 import time
 
+from entry import Entry
 from utils import clear_screen
 
 class Worklog:
@@ -15,6 +16,19 @@ class Worklog:
         except FileNotFoundError:
             with open(self.file_name, "a") as file:
                 file.write("date,name,minutes,note\n")
+
+        try:
+            for i in range(len(self.entries)):
+                entry = self.entries[i]
+                self.entries[i] = Entry(
+                        entry["date"],
+                        entry["name"],
+                        entry["minutes"],
+                        entry["note"]
+                )
+        except TypeError:
+            raise TypeError("Could not read data file."
+                          + " Ensure that CSV is properly formatted.")
         
 
     def print_entries(self):
@@ -27,14 +41,10 @@ class Worklog:
 
     def add_new_entry(self):
         clear_screen()
-        task_name = input("Enter task name\n>>> ")
-        task_minutes = input("\nEnter number of minutes\n>>> ")
-        # TODO: Shorten this line
-        task_date = input(f"\nEnter date in YYYY-MM-DD format\n"
-                    + "(or press ENTER for {datetime.date.today()})\n>>> ") or datetime.date.today()
-        task_note = input("\nEnter a note for this entry (optional)\n>>> ")
+        entry = Entry.create()
         with open(self.file_name, "a") as file:
-            file.write(f"{task_date},{task_name},{task_minutes},{task_note}\n")
+            writer = csv.writer(file)
+            writer.writerow([entry.date, entry.name, entry.minutes, entry.note])
 
 
     def clear_entries(self):
@@ -51,4 +61,28 @@ class Worklog:
             print("\nOPERATION CANCELLED")
         print("Returning to main menu...")
         time.sleep(1.5)
-            
+
+
+    def lookup_entries(self,selection):
+        if selection == "M":
+            return None
+        else:
+            clear_screen()
+        
+        if selection == "D":
+            # TODO: Implement search by DATE
+            input("TODO: Implement search by DATE...")
+            pass
+        elif selection == "T":
+            # TODO: Implement search by TIME
+            input("TODO: Implement search by TIME...")
+            pass
+        elif selection == "S":
+            # TODO: Implement search by STRING
+            input("TODO: Implement search by STRING...")
+            pass
+        else:
+            # TODO: Implement search by REGEX
+            input("TODO: Implement search by REGEX")
+            pass
+        
