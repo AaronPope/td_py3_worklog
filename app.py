@@ -17,7 +17,7 @@ from worklog import Worklog
 
 def lookup_entries():
     selection = lookup_menu.get_menu_selection("Lookup by...\n")
-    if selection == "B":
+    if selection == "M":
         return None
     else:
         utils.clear_screen()
@@ -57,19 +57,3 @@ if __name__ == '__main__':
             worklog.clear_entries()
         else:
             lookup_entries()
-
-
-# N) New Entry
-#   - Enter task Name
-#   - Enter # of minutes spent working
-#   - Enter additional notes
-#   ## Return to Main Menu
-
-# L) Lookup Previous Entries
-#   D) Find by Date
-#   T) Find by Time Spent (number of minutes)
-#   S) Find by Search (exact) (in Name or Notes)
-#   P) Find by Pattern
-#   B) Go Back || M) Main Menu
-
-# Q) Quit
