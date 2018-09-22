@@ -9,8 +9,8 @@ main_menu = Menu({
     
 lookup_menu = Menu({
         "D": "Date",
-        "T": "Time Spent",
-        "S": "Exact Search",
+        "T": "Time Spent (minutes)",
+        "S": "Exact Search (text)",
         "P": "Pattern Search",
         "B": "<--MAIN MENU---"
 })
