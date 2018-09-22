@@ -9,8 +9,12 @@ date,name,minutes,note
 
 2018-09-21,once more,5,"testing 1, 2, 3"
 
-2018-09-21,,54,
-2018-09-21,,4,
-2018-09-21,1,1,1
-2018-09-21,"1,1,1,",2,"1,1,1,1"
-2018-09-21,,432,"what a long time, eh?"
+2018-09-21,"Did a thing",54,"It was done"
+
+2018-09-21,"stuff, things, etc.",4,All of 'em
+
+2018-09-21,1 task,1,1 beer
+
+2018-09-21,"Lots of 1's",2,"1,1,1,1"
+
+2018-09-21,"Made a lot of lasagna & danced the night away",432,"what a long time, eh?"
