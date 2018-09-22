@@ -12,5 +12,5 @@ lookup_menu = Menu({
         "T": "Time Spent (minutes)",
         "S": "Exact Search (text)",
         "P": "Pattern Search",
-        "B": "<--MAIN MENU---"
+        "M": "<--MAIN MENU---"
 })
