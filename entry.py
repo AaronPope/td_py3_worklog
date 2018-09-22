@@ -15,7 +15,9 @@ class Entry:
         self.note = str(note)
 
     def __str__(self):
-        return f'{self.date},{self.name},{self.minutes},{self.note}'
+        return (f'--- {self.date} ---\nTASK: {self.name}\n'
+                + f'DURATION: {self.minutes} minutes\n'
+                + f'NOTE: {self.note}')
 
     @classmethod
     def create(cls):
