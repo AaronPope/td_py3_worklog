@@ -42,6 +42,7 @@ class Worklog:
                           + " Ensure that CSV is properly formatted.")
         except AttributeError:
             print("No existing worklog found.\nNew worklog has been created.\n")
+            self.entries = []
             print("Starting program...")
             time.sleep(.5)
         
