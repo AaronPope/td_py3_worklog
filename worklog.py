@@ -5,6 +5,8 @@ import time
 
 from entry import Entry
 from utils import clear_screen
+from utils import continue_prompt
+from utils import validate_positive_int
 
 class Worklog:
     def __init__(self):
@@ -36,7 +38,7 @@ class Worklog:
         except AttributeError:
             print("No existing worklog found.\nNew worklog has been created.\n")
             print("Starting program...")
-            time.sleep(1.5)
+            time.sleep(.5)
         
 
     def save_entries(self):
@@ -57,8 +59,12 @@ class Worklog:
 
     def add_new_entry(self):
         clear_screen()
-        self.entries.append(Entry.create())
-        new_entry = self.entries[-1]
+        new_entry = Entry.create()
+        if new_entry is None:
+            print("Add new entry cancelled.  Returning to main menu...")
+            time.sleep(1)
+            return None
+        self.entries.append(new_entry)
         with open(self.file_name, "a") as file:
             writer = csv.writer(file)
             writer.writerow([new_entry.date, new_entry.name, new_entry.minutes, new_entry.note])  
@@ -69,9 +75,10 @@ class Worklog:
             return None
         else:
             clear_screen()
-        
+        # Search by Date
         if selection == "D":
-            # TODO: Implement search by DATE
+            # Using set comprehension to eliminate duplicates,
+            #   but converting to list for sorting
             dates = list({entry.date for entry in self.entries})
             dates.sort()
             print("Select a date the view all entries on that date...")
@@ -89,26 +96,46 @@ class Worklog:
                 else:
                     clear_screen()
                     selected_date = dates[selection]
+                    print(f"*** All tasks for {selected_date} ***\n")
                     for entry in self.entries:
                         if entry.date == selected_date:
                             print(f'{entry}\n')
                     break
-            input("\nPress ENTER to return to main menu...")
-
-            pass
+        # Search by Time
         elif selection == "T":
             # TODO: Implement search by TIME
-            input("TODO: Implement search by TIME...")
-            pass
+            while True:
+                try:
+                    print("Enter duration (minutes) to search for")
+                    searched_minutes = input(">>> ")
+                    validate_positive_int(searched_minutes)
+                except ValueError as e:
+                    print(e)
+                else:
+                    clear_screen()
+                    print(f"*** All tasks with duration {searched_minutes} MINUTES ***\n")
+                    results = [entry for entry in self.entries if entry.minutes == searched_minutes]
+                    if len(results) > 0:
+                        for result in results:
+                            print(f"{result}\n")
+                    else:
+                        print("No entries with that duration found.\n")
+                    break
+        # Search by String
         elif selection == "S":
             # TODO: Implement search by STRING
             input("TODO: Implement search by STRING...")
             pass
+        # Search by Regex
         else:
             # TODO: Implement search by REGEX
             input("TODO: Implement search by REGEX")
             pass
-        
+
+        # No matter the path, prompt to hit ENTER for main menu return
+        continue_prompt()
+
+
 
     # def clear_entries(self):
     #     clear_screen()
