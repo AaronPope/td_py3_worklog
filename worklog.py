@@ -73,6 +73,12 @@ class Worklog:
             writer = csv.writer(file)
             writer.writerow([new_entry.date, new_entry.name, new_entry.minutes, new_entry.note])  
 
+    
+    def regex_entry_search(self, expression):
+        return [entry for entry in self.entries 
+                if re.search(expression, entry.name)
+                or re.search(expression, entry.note)]
+
 
     def lookup_entries(self,selection):
         if selection == "M":
@@ -129,20 +135,33 @@ class Worklog:
             print("Enter a search string.\n")
             print("- NAME and NOTE will be searched for all tasks -")
             print("- Searching IS case-sensitive, but partial matches will be returned -\n")
-            search_string = input(">>> ")
-            results = [entry for entry in self.entries 
-                       if re.search(search_string, entry.name)
-                       or re.search(search_string, entry.note)]
-            clear_screen()
-            print(f"Found {len(results)} matches for string \"{search_string}\"...\n")
-            self.print_selected_entries(results)
+            while True:
+                try:
+                    search_string = input(">>> ")
+                    results = self.regex_entry_search(search_string)
+                except re.error:
+                    print("Couldn't parse search query.  Please try again.")
+                else:
+                    clear_screen()
+                    print(f"Found {len(results)} matches for string \"{search_string}\"...\n")
+                    self.print_selected_entries(results)
+                    break
         # Search by Regex
         else:
             # TODO: Implement search by REGEX
             print("Enter a regular expression (REGEX) to search NAMES and NOTES...")
-            input(">>> ")
-            pass
-
+            print("DO NOT include either single (') or double (\") quotes")
+            while True:
+                try:
+                    regex = input(">>> ")
+                    results = self.regex_entry_search(regex)
+                except:
+                    print("Couldn't parse regex.  Please try again")
+                else:
+                    clear_screen()
+                    print(f"Found {len(results)} matches for regex \"{regex}\"...\n")
+                    self.print_selected_entries(results)
+                    break
         # No matter the path, prompt to hit ENTER for main menu return
         continue_prompt()
 
