@@ -103,7 +103,6 @@ class Worklog:
                     break
         # Search by Time
         elif selection == "T":
-            # TODO: Implement search by TIME
             while True:
                 try:
                     print("Enter duration (minutes) to search for")
