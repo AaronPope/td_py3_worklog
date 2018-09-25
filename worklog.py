@@ -62,28 +62,6 @@ class Worklog:
         with open(self.file_name, "a") as file:
             writer = csv.writer(file)
             writer.writerow([new_entry.date, new_entry.name, new_entry.minutes, new_entry.note])  
-            
-
-
-    def clear_entries(self):
-        clear_screen()
-        warning_message = '!!! This operation will delete ALL worklog entries.  It is not reversible. !!!'
-        print('!' * len(warning_message))
-        print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
-        print(warning_message)
-        print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
-        print('!' * len(warning_message) + '\n')
-        print('To confirm deletion, type "DELETE" and press ENTER')
-        confirm_delete = input('>>> ').upper()
-
-        if confirm_delete == "DELETE":
-            with open("entries.csv", "w") as file:
-                file.write("date,name,minutes,note")
-            print("\nAll entries have been removed.")
-        else:
-            print("\nOPERATION CANCELLED")
-        print("Returning to main menu...")
-        time.sleep(1.5)
 
 
     def lookup_entries(self,selection):
@@ -131,3 +109,23 @@ class Worklog:
             input("TODO: Implement search by REGEX")
             pass
         
+
+    # def clear_entries(self):
+    #     clear_screen()
+    #     warning_message = '!!! This operation will delete ALL worklog entries.  It is not reversible. !!!'
+    #     print('!' * len(warning_message))
+    #     print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
+    #     print(warning_message)
+    #     print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
+    #     print('!' * len(warning_message) + '\n')
+    #     print('To confirm deletion, type "DELETE" and press ENTER')
+    #     confirm_delete = input('>>> ').upper()
+
+    #     if confirm_delete == "DELETE":
+    #         with open("entries.csv", "w") as file:
+    #             file.write("date,name,minutes,note")
+    #         print("\nAll entries have been removed.")
+    #     else:
+    #         print("\nOPERATION CANCELLED")
+    #     print("Returning to main menu...")
+    #     time.sleep(1.5)
