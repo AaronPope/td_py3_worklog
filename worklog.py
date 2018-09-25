@@ -1,6 +1,7 @@
 import csv
 import datetime
 import os
+import re
 import time
 
 from entry import Entry
@@ -31,7 +32,7 @@ class Worklog:
                 )
             print(f"Worklog with {len(self.entries)} entries has been loaded.\n")
             print("Starting program...")
-            time.sleep(1.5)
+            time.sleep(.5)
         except TypeError:
             raise TypeError("Could not read data file."
                           + " Ensure that CSV is properly formatted.")
@@ -50,8 +51,11 @@ class Worklog:
 
 
     def print_entries(self):
+        self.print_selected_entries(self.entries)
+
+    def print_selected_entries(self, entries):
         try:
-            for entry in self.entries:
+            for entry in entries:
                 print(f'{entry}\n')
         except AttributeError:
             print("No entries exist for this worklog...")
@@ -122,13 +126,21 @@ class Worklog:
                     break
         # Search by String
         elif selection == "S":
-            # TODO: Implement search by STRING
-            input("TODO: Implement search by STRING...")
-            pass
+            print("Enter a search string.\n")
+            print("- NAME and NOTE will be searched for all tasks -")
+            print("- Searching IS case-sensitive, but partial matches will be returned -\n")
+            search_string = input(">>> ")
+            results = [entry for entry in self.entries 
+                       if re.search(search_string, entry.name)
+                       or re.search(search_string, entry.note)]
+            clear_screen()
+            print(f"Found {len(results)} matches for string \"{search_string}\"...\n")
+            self.print_selected_entries(results)
         # Search by Regex
         else:
             # TODO: Implement search by REGEX
-            input("TODO: Implement search by REGEX")
+            print("Enter a regular expression (REGEX) to search NAMES and NOTES...")
+            input(">>> ")
             pass
 
         # No matter the path, prompt to hit ENTER for main menu return
