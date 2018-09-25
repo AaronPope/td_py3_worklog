@@ -16,6 +16,9 @@ def exit_check(choice):
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
+def continue_prompt():
+    input("\nPress ENTER to return to main menu...")
+
 def validate_date_format(date):
     if not date_regex.fullmatch(date):
         raise ValueError(f"Date format could not be parsed. --> {date}\n"
@@ -24,7 +27,6 @@ def validate_date_format(date):
 def validate_positive_int(number):
     try:
         number = int(number)
-        pass
     except ValueError:
         raise ValueError("Entry must be an integer.")
     else:
