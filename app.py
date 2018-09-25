@@ -21,7 +21,5 @@ if __name__ == '__main__':
 
         if selection == "A":
             worklog.add_new_entry()
-        elif selection == "C":
-            worklog.clear_entries()
         else:
             worklog.lookup_entries(lookup_menu.get_menu_selection("Lookup by...\n"))
