@@ -9,7 +9,7 @@ date,name,minutes,note
 
 1111-12-12,Keepin' on with the coding,400,It's been a long productive night
 
-1111-11-11,lines test,1,
+1111-11-11,lines test,1,Test
 
 2018-09-21,"comma test, again",5,"it's taken a long, long time!"
 
@@ -31,6 +31,10 @@ date,name,minutes,note
 
 2015-8-15,Test,5,"another short, little test"
 
-2018-09-22,TASK,030,NOTE
-2018-09-24,Trying something from the REPL,5,Seems to work so far
-2018-09-24,Confirming that updated logic didn't break Add New Entry,10,Fingers crossed!
+2018-09-22,TASK,030,NOTE
+
+2018-09-24,Trying something from the REPL,5,Seems to work so far
+
+2018-09-24,Confirming that updated logic didn't break Add New Entry,10,Fingers crossed!
+
+2018-09-25,"one comma, two comma, three!",1,for using REGEX to search for two comma delimited words
