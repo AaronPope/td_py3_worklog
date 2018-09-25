@@ -1,6 +1,6 @@
 # Aaron Pope
-# 05/22/2018
-# Treehouse TechDegree - Python, Unit 2: Secret Messages
+# 05/22/2018, add more functions 9/20/2018
+# Treehouse TechDegree - Python, Unit 3: Work Log
 
 import os
 import re

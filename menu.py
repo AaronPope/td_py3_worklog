@@ -1,3 +1,7 @@
+# Aaron Pope
+# 09/01/2018
+# Treehouse TechDegree - Python, Unit 3: Work Log
+
 from utils import clear_screen
 
 class Menu:

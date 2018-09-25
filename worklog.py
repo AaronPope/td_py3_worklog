@@ -1,3 +1,7 @@
+# Aaron Pope
+# 09/01/2018
+# Treehouse TechDegree - Python, Unit 3: Work Log
+
 import csv
 import datetime
 import os
