@@ -21,7 +21,7 @@ General submission guidelines are provided by Treehouse and can be found here: h
 * find by time spent
   * When finding by time spent, I should be allowed to enter the number of minutes a task took and be able to choose one to see entries from.
 * find by exact search
-  * When finding by an exact string, I should be allowed to enter a string and then be presented with entreid containing that string in the task name or notes.
+  * When finding by an exact string, I should be allowed to enter a string and then be presented with entries containing that string in the task name or notes.
 * find by pattern
   * When finding by a pattern, I should be allowed to enter a regular expression and then be presented with entires matching that pattern in their task name or notes.
 
