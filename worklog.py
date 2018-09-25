@@ -91,82 +91,82 @@ class Worklog:
         else:
             clear_screen()
         # Search by Date
-        if selection == "D":
-            # Using set comprehension to eliminate duplicates,
-            #   but converting to list for sorting
-            dates = list({entry.date for entry in self.entries})
-            dates.sort()
-            print("Select a date the view all entries on that date...")
-            for i in range(len(dates)):
-                print(f'[{i}] {dates[i]}')
-            print("[B] <--BACK---")
-            while True:
-                try:
-                    selection = input(">>> ")
-                    if selection.upper() == "B":
-                        break
-                    selection = int(selection)
-                except ValueError:
-                    print("Invalid input.  Please choose from the menu.")
-                else:
-                    clear_screen()
-                    selected_date = dates[selection]
-                    print(f"*** All tasks for {selected_date} ***\n")
-                    for entry in self.entries:
-                        if entry.date == selected_date:
-                            print(f'{entry}\n')
-                    break
-        # Search by Time
-        elif selection == "T":
-            while True:
-                try:
-                    print("Enter duration (minutes) to search for")
-                    searched_minutes = input(">>> ")
-                    validate_positive_int(searched_minutes)
-                except ValueError as e:
-                    print(e)
-                else:
-                    clear_screen()
-                    print(f"*** All tasks with duration {searched_minutes} MINUTES ***\n")
-                    results = [entry for entry in self.entries if entry.minutes == searched_minutes]
-                    if len(results) > 0:
-                        for result in results:
-                            print(f"{result}\n")
+            if selection == "D":
+                # Using set comprehension to eliminate duplicates,
+                #   but converting to list for sorting
+                dates = list({entry.date for entry in self.entries})
+                dates.sort()
+                print("Select a date the view all entries on that date...")
+                for i in range(len(dates)):
+                    print(f'[{i}] {dates[i]}')
+                print("[B] <--BACK---")
+                while True:
+                    try:
+                        selection = input(">>> ")
+                        if selection.upper() == "B":
+                            break
+                        selection = int(selection)
+                    except ValueError:
+                        print("Invalid input.  Please choose from the menu.")
                     else:
-                        print("No entries with that duration found.\n")
-                    break
-        # Search by String
-        elif selection == "S":
-            print("Enter a search string.\n")
-            print("- NAME and NOTE will be searched for all tasks -")
-            print("- Searching IS case-sensitive, but partial matches will be returned -\n")
-            while True:
-                try:
-                    search_string = input(">>> ")
-                    results = self.regex_entry_search(search_string)
-                except re.error:
-                    print("Couldn't parse search query.  Please try again.")
-                else:
-                    clear_screen()
-                    print(f"Found {len(results)} matches for string \"{search_string}\"...\n")
-                    self.print_selected_entries(results)
-                    break
-        # Search by Regex
-        else:
-            # TODO: Implement search by REGEX
-            print("Enter a regular expression (REGEX) to search NAMES and NOTES...")
-            print("DO NOT include either single (') or double (\") quotes")
-            while True:
-                try:
-                    regex = input(">>> ")
-                    results = self.regex_entry_search(regex)
-                except:
-                    print("Couldn't parse regex.  Please try again")
-                else:
-                    clear_screen()
-                    print(f"Found {len(results)} matches for regex \"{regex}\"...\n")
-                    self.print_selected_entries(results)
-                    break
+                        clear_screen()
+                        selected_date = dates[selection]
+                        print(f"*** All tasks for {selected_date} ***\n")
+                        for entry in self.entries:
+                            if entry.date == selected_date:
+                                print(f'{entry}\n')
+                        break
+            # Search by Time
+            elif selection == "T":
+                while True:
+                    try:
+                        print("Enter duration (minutes) to search for")
+                        searched_minutes = input(">>> ")
+                        validate_positive_int(searched_minutes)
+                    except ValueError as e:
+                        print(e)
+                    else:
+                        clear_screen()
+                        print(f"*** All tasks with duration {searched_minutes} MINUTES ***\n")
+                        results = [entry for entry in self.entries if entry.minutes == searched_minutes]
+                        if len(results) > 0:
+                            for result in results:
+                                print(f"{result}\n")
+                        else:
+                            print("No entries with that duration found.\n")
+                        break
+            # Search by String
+            elif selection == "S":
+                print("Enter a search string.\n")
+                print("- NAME and NOTE will be searched for all tasks -")
+                print("- Searching IS case-sensitive, but partial matches will be returned -\n")
+                while True:
+                    try:
+                        search_string = input(">>> ")
+                        results = self.regex_entry_search(search_string)
+                    except re.error:
+                        print("Couldn't parse search query.  Please try again.")
+                    else:
+                        clear_screen()
+                        print(f"Found {len(results)} matches for string \"{search_string}\"...\n")
+                        self.print_selected_entries(results)
+                        break
+            # Search by Regex
+            else:
+                # TODO: Implement search by REGEX
+                print("Enter a regular expression (REGEX) to search NAMES and NOTES...")
+                print("DO NOT include either single (') or double (\") quotes")
+                while True:
+                    try:
+                        regex = input(">>> ")
+                        results = self.regex_entry_search(regex)
+                    except:
+                        print("Couldn't parse regex.  Please try again")
+                    else:
+                        clear_screen()
+                        print(f"Found {len(results)} matches for regex \"{regex}\"...\n")
+                        self.print_selected_entries(results)
+                        break
         # No matter the path, prompt to hit ENTER for main menu return
         continue_prompt()
 
