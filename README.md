@@ -5,7 +5,9 @@ For Treehouse TechDegree (Python), Unit 3: Work Log
 General submission guidelines are provided by Treehouse and can be found here: http://treehouse-techdegree.s3.amazonaws.com/Student-Project-Submission-Checklist.pdf
 
 ## Status
-* WIP
+* 'Status' not updated often enough!
+* But all basic functionality seems to be working.  Needs more testing.
+* Needs comments & docstrings
 
 # Requirements
 
@@ -32,16 +34,13 @@ General submission guidelines are provided by Treehouse and can be found here: h
 
 * Provide general code comments for information and context.
 
-
-## EXTRA CREDIT (1/4)
+## EXTRA CREDIT
+##### *[Will not be doing these in submission; may come back to revisit]*
 #### Menu has a "quit" option to exit the program
    
-## EXTRA CREDIT (2/4)
 #### Entries can be delted and edited, letting user change the date, task name, time spent, and/or notes
 
-## EXTRA CREDIT (3/4)
 #### Entries can be searched for and found based on a date range.
 For example, between 01/01/2015 and 12/31/2016
 
-## EXTRA CREDIT (4/4)
 #### Entries are displayed one at a time with the ability to page through records (previous/next/back).
