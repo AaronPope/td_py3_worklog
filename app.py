@@ -2,6 +2,8 @@
 # 09/01/2018
 # Treehouse TechDegree - Python, Unit 3: Work Log
 
+""" Serves as the launch point for the Work Log tool """
+
 import utils
 
 from menus import lookup_menu
