@@ -17,7 +17,7 @@ General submission guidelines are provided by Treehouse and can be found here: h
     
 #### As a user of the script, if I choose to find a previous entry, I should be presented with four options:
 * find by date
-  * When finding by date, I should be presetned with alist of dates with entries and be able to choose one to see entries from.
+  * When finding by date, I should be presented with a list of dates with entries and be able to choose one to see entries from.
 * find by time spent
   * When finding by time spent, I should be allowed to enter the number of minutes a task took and be able to choose one to see entries from.
 * find by exact search
