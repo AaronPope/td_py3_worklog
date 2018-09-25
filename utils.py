@@ -7,7 +7,7 @@ import re
 
 EXIT_ARGS = {"Q", "QUIT"}
 # Pretty "good enough" for matching dates
-date_regex = re.compile(r'\d{4}-[0-1]?[0-9]-[0-3]?[0-9]')
+DATE_REGEX = re.compile(r'\d{4}-[0-1]?[0-9]-[0-3]?[0-9]')
 
 def exit_check(choice):
     if choice in EXIT_ARGS:
@@ -20,7 +20,7 @@ def continue_prompt():
     input("\nPress ENTER to return to main menu...")
 
 def validate_date_format(date):
-    if not date_regex.fullmatch(date):
+    if not DATE_REGEX.fullmatch(date):
         raise ValueError(f"Date format could not be parsed. --> {date}\n"
                          + "The required format is \"YYYY-MM-DD\"")
 
