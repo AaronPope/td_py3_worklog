@@ -1,5 +1,5 @@
 # Work Log
-For Treehouse TechDegree (Python), Unit 3: Work Log
+*For Treehouse TechDegree (Python), Unit 3: Work Log*
 
 ---
 General submission guidelines are provided by Treehouse and can be found here: http://treehouse-techdegree.s3.amazonaws.com/Student-Project-Submission-Checklist.pdf
