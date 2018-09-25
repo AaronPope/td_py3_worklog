@@ -32,3 +32,5 @@ date,name,minutes,note
 2015-8-15,Test,5,"another short, little test"
 
 2018-09-22,TASK,030,NOTE
+2018-09-24,Trying something from the REPL,5,Seems to work so far
+2018-09-24,Confirming that updated logic didn't break Add New Entry,10,Fingers crossed!
