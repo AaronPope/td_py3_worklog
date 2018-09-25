@@ -18,12 +18,19 @@ class Entry:
         return (f'--- {self.date} ---\nTASK: {self.name}\n'
                 + f'DURATION: {self.minutes} minutes\n'
                 + f'NOTE: {self.note}')
+    
 
     @classmethod
     def create(cls):
+        cancel_kw = "CANCEL"
+        print("*** New Worklog Entry ***")
+        print(f"[Type {cancel_kw} (case-sensitve) for any field to cancel new entry.]\n")
+
         date = str(input(f"Enter date in YYYY-MM-DD format\n"
                     + "(or press ENTER for {datetime.date.today()})\n>>> ")
                     or datetime.date.today())
+        if date == cancel_kw:
+            return None
         while True:
             try:
                 validate_date_format(date)
@@ -34,8 +41,12 @@ class Entry:
                 break
         
         name = input("\nEnter task name\n>>> ")
+        if name == cancel_kw:
+            return None
         
         minutes = input("\nEnter number of minutes\n>>> ")
+        if minutes == cancel_kw:
+            return None
         while True:
             try:
                 validate_positive_int(minutes)
@@ -45,4 +56,6 @@ class Entry:
             else:
                 break
         note = input("\nEnter a note for this entry (optional)\n>>> ")
+        if note == cancel_kw:
+            return None
         return cls(date, name, minutes, note)
