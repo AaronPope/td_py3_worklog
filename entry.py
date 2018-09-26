@@ -28,6 +28,7 @@ class Entry:
         self.note = str(note)
 
     def __str__(self):
+        """Return a formatted string representation of the object"""
         return (f'--- {self.date} ---\nTASK: {self.name}\n'
                 + f'DURATION: {self.minutes} minutes\n'
                 + f'NOTE: {self.note}')
@@ -35,7 +36,7 @@ class Entry:
 
     @classmethod
     def create(cls):
-        """Return a new instance of Entry, based on user input """
+        """Return a new instance of Entry, based on user input"""
         cancel_kw = "CANCEL"
         print("*** New Worklog Entry ***")
         print(f"[Type {cancel_kw} (case-sensitve) "

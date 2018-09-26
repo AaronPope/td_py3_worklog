@@ -2,6 +2,8 @@
 # 09/01/2018
 # Treehouse TechDegree - Python, Unit 3: Work Log
 
+"""Repository for Menu objects"""
+
 from menu import Menu
 
 main_menu = Menu({
