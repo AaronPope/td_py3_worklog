@@ -10,7 +10,7 @@ from utils import validate_date_format
 from utils import validate_positive_int
 
 class Entry:
-    """ An object-oriented representation of a Work Log entry """
+    """An object-oriented representation of a Work Log entry"""
     def __init__(self, date, name, minutes, note):
         """Initialize a new instance of Entry
 
@@ -35,7 +35,7 @@ class Entry:
 
     @classmethod
     def create(cls):
-        """ Returns a new instance of Entry, based on user input """
+        """Return a new instance of Entry, based on user input """
         cancel_kw = "CANCEL"
         print("*** New Worklog Entry ***")
         print(f"[Type {cancel_kw} (case-sensitve) "
@@ -51,7 +51,8 @@ class Entry:
             try:
                 validate_date_format(date)
             except ValueError:
-                date = str(input("Couldn't parse entry.  Please try again.\n>>> ")
+                date = str(input("Couldn't parse entry.  "
+                                 + "Please try again.\n>>> ")
                     or datetime.date.today())
             else:
                 break

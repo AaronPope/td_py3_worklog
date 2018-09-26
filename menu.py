@@ -38,7 +38,7 @@ class Menu:
         while selection not in self.options.keys():
             clear_screen()
             print("INVALID ENTRY.  "
-                  + "Make a selection from the available options...\n")
+                  + "M)Make a selection from the available options...\n")
             print(direction_text)
             selection = self.prompt_with_options()
         return selection
