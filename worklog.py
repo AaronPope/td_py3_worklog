@@ -246,6 +246,8 @@ class Worklog:
             with open("entries.csv", "w") as file:
                 file.write("date,name,minutes,note\n")
             print("\nAll entries have been removed.")
+            # It's easier to reset the list than read a file known to be empty
+            self.entries = []
         else:
             print("\nOPERATION CANCELLED")
         print("Returning to main menu...")
