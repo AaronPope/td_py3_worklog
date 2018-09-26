@@ -9,6 +9,7 @@ from menu import Menu
 main_menu = Menu({
         "A": "ADD New Entry",
         "L": "LOOKUP Previous Entries",
+        "C": "CLEAR All Entries",
         "Q": "---QUIT---"
 })
     

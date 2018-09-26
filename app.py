@@ -20,6 +20,8 @@ if __name__ == '__main__':
 
         if selection == "A":
             worklog.add_new_entry()
+        elif selection == "C":
+            worklog.clear_entries()
         elif len(worklog.entries) == 0:
                 clear_screen()
                 print("This worklog does not yet contain any entries.")

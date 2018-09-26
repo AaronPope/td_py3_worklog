@@ -231,22 +231,22 @@ class Worklog:
 
 
 
-    # def clear_entries(self):
-    #     clear_screen()
-    #     warning_message = '!!! This operation will delete ALL worklog entries.  It is not reversible. !!!'
-    #     print('!' * len(warning_message))
-    #     print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
-    #     print(warning_message)
-    #     print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
-    #     print('!' * len(warning_message) + '\n')
-    #     print('To confirm deletion, type "DELETE" and press ENTER')
-    #     confirm_delete = input('>>> ').upper()
+    def clear_entries(self):
+        clear_screen()
+        warning_message = '!!! This operation will delete ALL worklog entries.  It is not reversible. !!!'
+        print('!' * len(warning_message))
+        print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
+        print(warning_message)
+        print('!!!' + ' ' * (len(warning_message)-6) + '!!!')
+        print('!' * len(warning_message) + '\n')
+        print('To confirm deletion, type "DELETE" and press ENTER')
+        confirm_delete = input('>>> ').upper()
 
-    #     if confirm_delete == "DELETE":
-    #         with open("entries.csv", "w") as file:
-    #             file.write("date,name,minutes,note")
-    #         print("\nAll entries have been removed.")
-    #     else:
-    #         print("\nOPERATION CANCELLED")
-    #     print("Returning to main menu...")
-    #     time.sleep(1.5)
+        if confirm_delete == "DELETE":
+            with open("entries.csv", "w") as file:
+                file.write("date,name,minutes,note")
+            print("\nAll entries have been removed.")
+        else:
+            print("\nOPERATION CANCELLED")
+        print("Returning to main menu...")
+        time.sleep(1.5)
