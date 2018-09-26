@@ -49,7 +49,7 @@ class Worklog:
                 )
             print(f"Worklog with {len(self.entries)} entries has been loaded.\n")
             print("Starting program...")
-            time.sleep(.5)
+            time.sleep(.75)
         except TypeError:
             raise TypeError("Could not read data file."
                           + " Ensure that CSV is properly formatted.")
@@ -57,7 +57,7 @@ class Worklog:
             print("No existing worklog found.\nNew worklog has been created.\n")
             self.entries = []
             print("Starting program...")
-            time.sleep(.5)
+            time.sleep(.75)
         
 
     def save_entries(self):
