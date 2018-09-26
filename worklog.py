@@ -126,6 +126,8 @@ class Worklog:
                 if selection.upper() == "B":
                     break
                 selection = int(selection)
+                if int(selection) not in range(len(self.entries)):
+                    raise ValueError
             except ValueError:
                 print("Invalid input.  Please choose from the menu.")
             else:
