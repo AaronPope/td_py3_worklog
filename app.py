@@ -29,5 +29,5 @@ if __name__ == '__main__':
                 continue_prompt()
         else:
             clear_screen()
-            print(f"This Work Log currently contains {len(worklog.entries)} entries\n")
+            print(f"This Work Log currently contains {len(worklog.entries)} entries.\n")
             worklog.lookup_entries(lookup_menu.get_menu_selection("Lookup by...\n", False))
