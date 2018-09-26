@@ -244,7 +244,7 @@ class Worklog:
 
         if confirm_delete == "DELETE":
             with open("entries.csv", "w") as file:
-                file.write("date,name,minutes,note")
+                file.write("date,name,minutes,note\n")
             print("\nAll entries have been removed.")
         else:
             print("\nOPERATION CANCELLED")
