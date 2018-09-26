@@ -167,7 +167,7 @@ class Worklog:
         Searching is case-sensitive.
         Partial matches are considered hits.
 
-        This acutally re-uses regex search, since a string is just a
+        This actually re-uses regex search, since a string is just a
             very specific regex match criterion.
         """
         print("*** String Search ***\n")
