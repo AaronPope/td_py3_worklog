@@ -28,4 +28,6 @@ if __name__ == '__main__':
                 print("Please go add some before searching!")
                 continue_prompt()
         else:
-            worklog.lookup_entries(lookup_menu.get_menu_selection("Lookup by...\n"))
+            clear_screen()
+            print(f"This Work Log currently contains {len(worklog.entries)} entries\n")
+            worklog.lookup_entries(lookup_menu.get_menu_selection("Lookup by...\n", False))
