@@ -41,5 +41,5 @@ def validate_positive_int(number):
     except ValueError:
         raise ValueError("Entry must be an integer.")
     else:
-        if number < 0:
+        if number < 1:
             raise ValueError("Entry must be a positive number.")
