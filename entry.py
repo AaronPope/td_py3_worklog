@@ -44,7 +44,7 @@ class Entry:
 
         # Get user input for Date
         date = str(input(f"Enter date in YYYY-MM-DD format\n"
-                    + "(or press ENTER for {datetime.date.today()})\n>>> ")
+                    + f"(or press ENTER for {datetime.date.today()})\n>>> ")
                     or datetime.date.today())
         if date == cancel_kw:
             return None
