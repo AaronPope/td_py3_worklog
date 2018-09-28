@@ -46,7 +46,7 @@ class Entry:
         date = str(input(f"Enter date in YYYY-MM-DD format\n"
                     + f"(or press ENTER for {datetime.date.today()})\n>>> ")
                     or datetime.date.today())
-        if date == cancel_kw:
+        if date.upper() == cancel_kw:
             return None
         while True:
             try:
@@ -60,12 +60,12 @@ class Entry:
         
         # Get user input for task Name
         name = input("\nEnter task name\n>>> ")
-        if name == cancel_kw:
+        if name.upper() == cancel_kw:
             return None
         
         # Get user input for task Minutes
         minutes = input("\nEnter number of minutes\n>>> ")
-        if minutes == cancel_kw:
+        if minutes.upper() == cancel_kw:
             return None
         while True:
             try:
@@ -78,7 +78,7 @@ class Entry:
                 
         # Get user input for task Note
         note = input("\nEnter a note for this entry (optional)\n>>> ")
-        if note == cancel_kw:
+        if note.upper() == cancel_kw:
             return None
         
         return cls(date, name, minutes, note)
