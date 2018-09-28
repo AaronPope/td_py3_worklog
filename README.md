@@ -8,6 +8,7 @@ General submission guidelines are provided by Treehouse and can be found here: h
 * 'Status' not updated often enough!
 * But all basic functionality seems to be working.  Needs more testing.
 * Needs comments & docstrings
+* Ready for submission!
 
 # Requirements
 
