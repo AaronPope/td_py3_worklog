@@ -15,7 +15,9 @@ class Menu:
         self.options = options
 
     def print_options(self, clear = False):
-        """Print each Menu option key/value pair to the terminal"""
+        """Print each Menu option key/value pair to the terminal
+        in the format "[key]) [value]"
+        """
         if clear:
             clear_screen()
         for key, value in self.options.items():
